@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <script>
+        L_NO_TOUCH = false;
+        L_DISABLE_3D = false;
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+</head>
+<body>
+    <div id="map-container" class="container">
+        <h1>Seattle Bicycle Traffic & Weather Data Map</h1>
+        <h3>Created by Ayato Hisanaga</h3>
+        <div id="map"></div>
+    </div>
+
+    <script>
+        var map = L.map("map", {
+            center: [47.61, -122.3],
+            crs: L.CRS.EPSG3857,
+            zoom: 10.5,
+            zoomControl: true,
+            preferCanvas: false
+        });
+
+        L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors",
+            maxNativeZoom: 19,
+            maxZoom: 19
+        }).addTo(map);
+
+        var locations = [
+            {coords: [47.647804816783776, -122.34965620817628], name: 'fremont'},
+            {coords: [47.57154243954694, -122.35250854561053], name: 'spokane'},
+            {coords: [47.67948422341924, -122.26530861676935], name: 'burke'},
+            {coords: [47.67118999540869, -122.38468112351677], name: 'greenway58'},
+            {coords: [47.67409428309995, -122.285820189782], name: 'greenway39'},
+            {coords: [47.619539216056275, -122.36182773211407], name: 'elliot'},
+            {coords: [47.52791493333875, -122.2810104897941], name: 'sealth'},
+            {coords: [47.6130528230416, -122.32060988696526], name: 'broadway'},
+            {coords: [47.60470503170352, -122.33470210300008], name: 'marion'},
+            {coords: [47.58959212317513, -122.30947385227365], name: 'mts'},
+            {coords: [47.562968127499914, -122.365437145611], name: 'greenway26'},
+            {coords: [47.61646839089222, -122.33978855968897], name: 'blanchard'},
+            {coords: [47.63657498418624, -122.34710598680937], name: 'westlake'},
+            {coords: [47.61672165030975, -122.3497643817774], name: 'second_cedar'}
+        ];
+
+        locations.forEach(function(location) {
+            var marker = L.marker(location.coords).addTo(map);
+            var popup = L.popup({maxWidth: "100%"}).setContent(`<div style="width: 100.0%; height: 100.0%;">${location.name}</div>`);
+            marker.bindPopup(popup);
+            marker.bindTooltip(`<div>${location.name}</div>`, {sticky: true});
+
+            marker.on('click', function() {
+                window.location.href = `/select_dates?location=${location.name}`;
+            });
+        });
+    </script>
+</body>
+</html>

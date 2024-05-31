@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Data for {{ location }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .btn-group {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data for {{ location }}</h1>
+        
+        <div class="btn-group">
+            <button class="btn btn-primary" onclick="convertUnits('metric')">Convert to Metric</button>
+            <button class="btn btn-secondary" onclick="convertUnits('imperial')">Convert to Imperial</button>
+            <form id="download-form" action="{{ url_for('download_data', location=location, unit_system='imperial') }}" method="get" style="display:inline;">
+                <input type="hidden" name="start_date" value="{{ request.form.start_date }}">
+                <input type="hidden" name="end_date" value="{{ request.form.end_date }}">
+                <button type="submit" class="btn btn-info">Download CSV</button>
+            </form>
+            <a href="/" class="btn btn-secondary mt-3">Back to Map</a>
+        </div>
+        
+        <table class="table" id="data-table">
+            <thead>
+                <tr>
+                    {% for column in data.columns %}
+                        <th>{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for index, row in data.iterrows() %}
+                    <tr>
+                        {% for column in data.columns %}
+                            <td class="{{ column.replace(' ', '_') }}">{{ row[column] }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    </div>
+
+    <script>
+        let currentUnitSystem = 'imperial';  // Default unit system is imperial
+
+        function convertUnits(unitSystem) {
+            if (unitSystem === currentUnitSystem) {
+                return;  // No conversion needed if the selected unit system is already applied
+            }
+
+            const table = document.getElementById("data-table");
+            const rows = table.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+
+            for (let row of rows) {
+                const cells = row.getElementsByTagName("td");
+
+                for (let cell of cells) {
+                    const columnClass = cell.className;
+
+                    // Convert temperature columns
+                    if (columnClass.includes('temp_min') || columnClass.includes('temp_max') || columnClass.includes('temp_avg')) {
+                        const temp = parseFloat(cell.innerText);
+                        if (!isNaN(temp)) {
+                            cell.innerText = unitSystem === 'metric' ? ((temp - 32) * 5 / 9).toFixed(2) : (temp * 9 / 5 + 32).toFixed(2);
+                        }
+                    }
+
+                    // Convert precipitation columns
+                    if (columnClass.includes('precipitation')) {
+                        const precip = parseFloat(cell.innerText);
+                        if (!isNaN(precip)) {
+                            cell.innerText = unitSystem === 'metric' ? (precip * 2.54).toFixed(2) : (precip / 2.54).toFixed(2);
+                        }
+                    }
+
+                    // Convert wind speed columns
+                    if (columnClass.includes('wind_speed_avg')) {
+                        const windSpeed = parseFloat(cell.innerText);
+                        if (!isNaN(windSpeed)) {
+                            cell.innerText = unitSystem === 'metric' ? (windSpeed * 1.60934).toFixed(2) : (windSpeed / 1.60934).toFixed(2);
+                        }
+                    }
+                }
+            }
+
+            // Update download link with the current unit system
+            const downloadForm = document.getElementById("download-form");
+            downloadForm.action = `/download_data/{{ location }}/${unitSystem}?start_date={{ request.form.start_date }}&end_date={{ request.form.end_date }}`;
+
+            currentUnitSystem = unitSystem;  // Update the current unit system
+        }
+    </script>
+</body>
+</html>

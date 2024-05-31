@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Dates</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Select Dates for {{ location }}</h1>
+        <p>Available date range: {{ start_date }} to {{ end_date }}</p>
+        <form method="post">
+            <div class="mb-3">
+                <label for="start_date" class="form-label">Start Date:</label>
+                <input type="date" id="start_date" name="start_date" min="{{ start_date }}" max="{{ end_date }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="end_date" class="form-label">End Date:</label>
+                <input type="date" id="end_date" name="end_date" min="{{ start_date }}" max="{{ end_date }}" required>
+            </div>
+            <input type="hidden" name="location" value="{{ location }}">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <a href="/" class="btn btn-secondary mt-3">Back to Map</a>
+    </div>
+</body>
+</html>
