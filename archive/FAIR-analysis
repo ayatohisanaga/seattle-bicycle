@@ -1,0 +1,17 @@
+Measure capabilities of existing project structures using FAIR
+Ayato Hisanaga // Seattle Bicycle Traffic Data Processing Project
+
+Seattle Bicycle Traffic Predictor is a project currently in development aimed at leveraging ML techniques
+to make daily cyclist traffic predictions for 14 sensor locations in and around Seattle, WA. The Seattle Bicycle
+Traffic Data Processing Project addresses the critical need for useable data by collecting datasets from
+Seattle Open Data via API and restructuring them to improve FAIRness. 
+
+When the datasets are collected, a JSON file containing metadata for each dataset is produced. Several aspects of 
+this metadata promote FAIR principles. For example, the metadata includes the original dataset identifier key used 
+in Seattle's Open Data Portal, making it retrievable ('A1') and references other metadata ('I3'). The metadata also 
+includes the title and a brief description in English, providing street or landmark names to provide rich details ('F3').
+It also provides a direct web address to the Open Data source page for each dataset, providing relevant source information 
+for the data ('R1'). Furthermore, to support the accessibility of the actual datasets themselves, the metadata contains
+a short, English identifier ('fremont', 'greenway58', 'blanchard') that corresponds with the datasets stored in CSV 
+format ('fremont.csv', 'greenway58.csv', 'blanchard.csv') ('I1'). To improve alignment with FAIR guidelines, the metadata
+and processed datasets should be uploaded to an online repository such as GitHub, allowing them to be searchable ('F4').
