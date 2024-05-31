@@ -1,0 +1,10 @@
+IMT 542 // G7 Improve the existing information structure and format
+Ayato Hisanaga // Seattle Bicycle Traffic Database Project
+
+The Seattle Bicycle Traffic Weather API provides intuitive access to a database. Equipped with this API, users can easily obtain bicycle traffic and weather data for 14 locations around the beautiful city of Seattle, WA. Weather data includes daily temperatures, precipitation, snow depth, as well as several other conditions such as lightning, hailing, and flooding. Queries can be filtered by date range and location. The dataset is stored as a CSV file, but output is in JSON format for greater portability (and selectability of data). 
+
+1. As the database contains data from various sources that do not share the same updating cycle, there exists a tradeoff between having near-real-time-but-incomplete data and having what is akin to historical data. The database will be updated on a monthly basis to align with the bicycle traffic data's updating cycle to promote easier maintenance. Moreover, the one-month delay serves as a quality assurance period by naturally providing an opportunity to review incoming data before being made publicly acessible through the API. 
+
+Currently, the amount of bicycle traffic data available for each location is inconsistent due to differences between sensors; not all were installed at the same time, and some are currently out of operation. Metadata should include information about limits to data coverage for each location. Furthermore, all weather data is provided using standard American units (Fahrenheit, inches, etc.). This data should also be available using the more widely-used metric system.
+
+2. Transparency is an effective strategy for identifying and managing information security issues. On top of proper documentation and the provision of metadata, leveraging GitHub as a platform to share the data and code behind the API. By disclosing all data sources and including the web scraping solutions used to collect certain weather data, users and other developers may identifiy potential information security risks in either the sources or programming. 

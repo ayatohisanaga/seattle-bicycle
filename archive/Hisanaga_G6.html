@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <title>IMT 542 G6</title>
+</head>
+<body>
+    <h1>G6: Communicate how existing information is restructured to make it more portable</h1>
+    <h3>Project: Seattle Cyclist Weather Database</h3>
+    <h4>Ayato Hisanaga</h4>
+    <div>
+        <p>
+            <strong>Project Overview (Still Tweaking!)</strong>
+        </p>
+        <p>
+            Seattle is a lovely city for bicycles... When the weather is nice!<br>
+            I am a casual bicycle enthusiast who enjoys cruising around, but I am not familiar with local paths, and am even less familiar with Seattle's weather patterns. To understand the behavior of local cyclists based on weather conditions, I wanted to analyze the relationship between weather and bicycle traffic. However, I found that no single dataset satisfied my analytical needs; weather conditions of interest exist, but only across disparate sources; cyclist traffic data for different locations were separated as well.<br>
+            <br>
+            The primary objective of the <i>Seattle Cyclist Weather Database</i> is to provide all of the relevant bicycle traffic and weather data. Paired with a simple querying interface, users can efficiently retrieve data for target dates and/or locations. Target audiences include cyclists and city planners interested in understanding how local cyclists commute.
+        </p>
+        <p>
+            <strong>Data Availability</strong>
+        </p>
+        <p>
+            All of the data already exists and is publicly available, but not in a unified manner; different relevant features exist in different data sources. Furthermore, access methods for the datasets are different. For example, bicycle traffic data is obtained from <a href="https://data.seattle.gov">Seattle Open Data</a> and can be accessed via API endpoints; each dataset has a unique identifier. Each dataset corresponds to a specific location, but due to the lack of coordinate data in the traffic metadata, approximate coordinates were manually obtained from Google Maps.
+            <br>
+            In contrast, weather data is sourced from three disparate sources that do not provide API access. Temperature, precipitation, snow, and various other weather conditions are available from <a href="https://www.noaa.gov/weather">NOAA</a> for free, and can be manually downloaded. Wind direction and speed data are available at <a href="https://www.wunderground.com">Weather Underground</a> and <a href="https://www.almanac.com">Almanac</a>, respectively, and must be scraped.<br>
+            <br>
+            To enhance the accessibility of existing bicycle traffic and weather data, this project combines all of the aforementioned data source, resulting in a comprehensive dataset containing data for 14 locations around Seattle. A new JSON file containing metadata is also created to accompany the newly engineered dataset.
+        </p>
+        <p>
+            <strong>Limitations</strong>
+        </p>
+        <p>
+            The limitations of the engineered data reflect the limitations of the original bicycle traffic data. For example, date ranges between different locations are inconsistent, and not every location has the most recent data. This inherently limits the applicability of the dataset for certain locations.<br>
+            <br> Furthermore, while the weather data is updated multiple times per day, the bicycle traffic data is updated at longer intervals that differ between locations. In other words, unless the bicycle traffic data becomes available on a daily basis, the dataset will never reflect real-time conditions. Regardless, meaningful data analysis of trends remains possible with these considerations in mind.
+        </p>
+        <p>
+            <strong>Ethical Concerns</strong>
+        </p>
+        <p>
+            As the sole engineer of this combined dataset, I am entirely responsible for deciding what features to include or exclude. Without accountability, this raises concerns about potential bias. Furthermore, two of the data sources are <i>web scraped</i>, and that is a morally contested method of data retrieval.<br>
+            <br>
+            From a Virtue Ethics perspective, acting with integrity throughout the entire process is important. Being transparent about the data, its origins, and its limitations is an effective deterrent of bias. Sharing my data processing pipeline is an key component of accountability.<br>
+            <br>
+            With that said, sharing the custom web scraping programs raises issues as well. If I share my scrapers and they are used by others to overload the data sources, I am surely responsible for the damages. From a Consequenialist perspective, it may be best to avoid sharing such code to the general public.<br>
+            <br>
+            Web scraping tends to raise ethical concerns. As such, proper consultation of each page's robots.txt file was performed prior to scraping. No page explicitly prohibited web scraping, but did establish rate limits which were followed. From a non-Consequentialist perspective, it is advisable to simply follow the rules of web scraping.
+        </p>
+        <p>
+            <strong>Societal Impact</strong>
+        </p>
+        <p>
+            Once live, this database enables computational data analysis of local bicycle traffic trends based on weather conditions. The insights within the data could help Seattle city planners make informed decisions regarding funding for path maintenance. Cyclists could view historical trends at each location to plan their route; whether they want to avoid traffic or take the true-and-tested road, the database has broad applications.<br>
+            <br>
+            Properly implemented, the data in this database could also be leveraged to train a machine learning model that predicts bicycle traffic at each location based on weather. With a good model, the predictive insights could help optimize the distributoion of public funding for various commuter infrastructure.
+        </p>
+        <p>
+            <strong>Portability</strong>
+        </p>
+        <p>
+            Ultimately, the data will be made publicly available on my GitHub repository as a CSV file to promote accessibility. To account for users only interested in data for specific locations, I've also created a CSV file for each location. The metadata JSON file will also be uploaded to my GitHub repository; it includes the original identifier key for each location's bicycle traffic data. If my dataset becomes unavailable but the metadata persists, people can still access that data from the original source via API.  
+        </p>
+    </div>
+</body>
+<footer>
+    <p>&copy; Spring 2024 IMT 542 A </p>
+</footer>
