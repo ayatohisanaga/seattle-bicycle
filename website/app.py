@@ -2,11 +2,10 @@ from flask import Flask, render_template, request, redirect, url_for, send_file
 import pandas as pd
 import os
 import json
-
 app = Flask(__name__)
 
 # Load metadata from the JSON file
-with open("outputs/metadata.json", "r") as file:
+with open("website/metadata.json", "r") as file:
     metadata = json.load(file)
 
 # Path to the directory with the merged datasets

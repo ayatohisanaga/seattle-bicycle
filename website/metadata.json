@@ -1,0 +1,170 @@
+[
+    {
+        "title": "Fremont Bridge Bicycle Counter",
+        "link": "https://data.seattle.gov/Transportation/Fremont-Bridge-Bicycle-Counter/65db-xm6k",
+        "api_docs_link": "https://dev.socrata.com/foundry/data.seattle.gov/65db-xm6k",
+        "dataset_id": "65db-xm6k",
+        "description": "The Fremont Bridge Bicycle Counter began operation in October 2012 and records the number of bikes that cross the bridge using the pedestrian/bicycle pathways. Inductive loops on the east and west pathways count the passing of bicycles regardless of travel direction. The data consists of a date/time field: Date, east pathway count field: Fremont Bridge NB,  and west pathway count field: Fremont Bridge SB. The count fields represent the total bicycles detected during the specified one hour period. Direction of travel is not specified, but in general most traffic in the Fremont Bridge NB field is travelling northbound and most traffic in the Fremont Bridge SB field is travelling southbound.",
+        "identifier": "fremont",
+        "date_range": {
+            "start": "2012-12-03",
+            "end": "2024-04-30"
+        }
+    },
+    {
+        "title": "Spokane St Bridge Bicycle Counter",
+        "link": "https://data.seattle.gov/Transportation/Spokane-St-Bridge-Bicycle-Counter/upms-nr8w",
+        "api_docs_link": "https://dev.socrata.com/foundry/data.seattle.gov/upms-nr8w",
+        "dataset_id": "upms-nr8w",
+        "description": "The Spokane Bridge Bicycle Counter records the number of bikes that cross the bridge using the pedestrian/bicycle pathway on the south side. Inductive loops on the pathway count the passing of bicycles with travel direction. The data consists of a date/time field, east pathway count field and west pathway count field. The count fields represent the total bicycles detected during the specified one hour period.",
+        "identifier": "spokane",
+        "date_range": {
+            "start": "2014-01-01",
+            "end": "2024-04-30"
+        }
+    },
+    {
+        "title": "Burke Gilman Trail north of NE 70th St Bicycle and Pedestrian Counter",
+        "link": "https://data.seattle.gov/Transportation/Burke-Gilman-Trail-north-of-NE-70th-St-Bicycle-and/2z5v-ecg8",
+        "api_docs_link": "https://dev.socrata.com/foundry/data.seattle.gov/2z5v-ecg8",
+        "dataset_id": "2z5v-ecg8",
+        "description": "These sensors counts both people riding bikes and pedestrians. Separate volumes are tallied for each travel mode. Wires in a diamond formation in the concrete detect bikes and an infrared sensor mounted on a wooden post detects pedestrians. The counters also capture the direction of travel for both bikes and pedestrians.",
+        "identifier": "burke",
+        "date_range": {
+            "start": "2014-01-01",
+            "end": "2024-04-30"
+        }
+    },
+    {
+        "title": "2nd Ave Cycle Track North of Marion St Bicycle Counter",
+        "link": "https://data.seattle.gov/Transportation/2nd-Ave-Cycle-Track-North-of-Marion-St-Bicycle-Cou/avwm-i8ym",
+        "api_docs_link": "https://dev.socrata.com/foundry/data.seattle.gov/avwm-i8ym",
+        "dataset_id": "avwm-i8ym",
+        "description": "The counter consist on Inductive loops on the pathway that count the passing of bicycles with travel direction. They are very accurate and designed to be used on greenways and cycle tracks",
+        "identifier": "greenway58",
+        "date_range": {
+            "start": "2015-01-01",
+            "end": "2023-12-31"
+        }
+    },
+    {
+        "title": "Broadway Cycle Track North Of E Union St Bicycle Counter (Out of Service)",
+        "link": "https://data.seattle.gov/Transportation/Broadway-Cycle-Track-North-Of-E-Union-St-Bicycle-C/j4vh-b42a",
+        "api_docs_link": "https://dev.socrata.com/foundry/data.seattle.gov/j4vh-b42a",
+        "dataset_id": "j4vh-b42a",
+        "description": "Due to hardware issues, this counter is no longer in service. Counts are conducted using tubes on a quarterly basis.",
+        "identifier": "marion",
+        "date_range": {
+            "start": "2014-01-01",
+            "end": "2021-10-30"
+        }
+    },
+    {
+        "title": "Chief Sealth Trail North of Thistle Bicycle Counter (Out of Service)",
+        "link": "https://data.seattle.gov/Transportation/Chief-Sealth-Trail-North-of-Thistle-Bicycle-Counte/uh8h-bme7",
+        "api_docs_link": "https://dev.socrata.com/foundry/data.seattle.gov/uh8h-bme7",
+        "dataset_id": "uh8h-bme7",
+        "description": "Due to hardware issues, this counter is no longer in service. Counts are conducted using tubes on a quarterly basis.",
+        "identifier": "broadway",
+        "date_range": {
+            "start": "2014-01-01",
+            "end": "2021-10-30"
+        }
+    },
+    {
+        "title": "NW 58th St Greenway at 22nd Ave NW Bicycle Counter (Out of Service)",
+        "link": "https://data.seattle.gov/Transportation/NW-58th-St-Greenway-at-22nd-Ave-NW-Bicycle-Counter/47yq-6ugv",
+        "api_docs_link": "https://dev.socrata.com/foundry/data.seattle.gov/47yq-6ugv",
+        "dataset_id": "47yq-6ugv",
+        "description": "This counter is no longer counting continuously and will be counted quarterly.",
+        "identifier": "sealth",
+        "date_range": {
+            "start": "2014-01-01",
+            "end": "2022-07-31"
+        }
+    },
+    {
+        "title": "39th Ave NE Greenway at NE 62nd St Bicycle Counter (Out of Service)",
+        "link": "https://data.seattle.gov/Transportation/39th-Ave-NE-Greenway-at-NE-62nd-St-Bicycle-Counter/3h7e-f49s",
+        "api_docs_link": "https://dev.socrata.com/foundry/data.seattle.gov/3h7e-f49s",
+        "dataset_id": "3h7e-f49s",
+        "description": "The counters consist of two small tube sensors stretching across the street, which are attached to a small metal counting box made by Eco-Counter. The tubes only count people riding bikes. They are very accurate and designed to be used on greenways.",
+        "identifier": "greenway39",
+        "date_range": {
+            "start": "2014-01-01",
+            "end": "2018-05-31"
+        }
+    },
+    {
+        "title": "Elliott Bay Trail in Myrtle Edwards Park Bicycle and Pedestrian Counter (Out of Service)",
+        "link": "https://data.seattle.gov/Transportation/Elliott-Bay-Trail-in-Myrtle-Edwards-Park-Bicycle-a/4qej-qvrz",
+        "api_docs_link": "https://dev.socrata.com/foundry/data.seattle.gov/4qej-qvrz",
+        "dataset_id": "4qej-qvrz",
+        "description": "Due to hardware issues, this counter is no longer in service.",
+        "identifier": "elliot",
+        "date_range": {
+            "start": "2013-05-11",
+            "end": "2022-12-11"
+        }
+    },
+    {
+        "title": "26th Ave SW Greenway at SW Oregon St Bicycle Counter (Out of Service)",
+        "link": "https://data.seattle.gov/Transportation/26th-Ave-SW-Greenway-at-SW-Oregon-St-Bicycle-Count/mefu-7eau",
+        "api_docs_link": "https://dev.socrata.com/foundry/data.seattle.gov/mefu-7eau",
+        "dataset_id": "mefu-7eau",
+        "description": "The counters consist of two small tube sensors stretching across the street, which are attached to a small metal counting box made by Eco-Counter. The tubes only count people riding bikes. They are very accurate and designed to be used on greenways.",
+        "identifier": "mts",
+        "date_range": {
+            "start": "2014-01-01",
+            "end": "2021-10-30"
+        }
+    },
+    {
+        "title": "MTS Trail west of I-90 Bridge Bicycle and Pedestrian Counter (Out of Service)",
+        "link": "https://data.seattle.gov/Transportation/MTS-Trail-west-of-I-90-Bridge-Bicycle-and-Pedestri/u38e-ybnc",
+        "api_docs_link": "https://dev.socrata.com/foundry/data.seattle.gov/u38e-ybnc",
+        "dataset_id": "u38e-ybnc",
+        "description": "Due to hardware issues, this counter is no longer in service. Counts are conducted using tubes on a quarterly basis.",
+        "identifier": "greenway26",
+        "date_range": {
+            "start": "2013-12-18",
+            "end": "2021-12-31"
+        }
+    },
+    {
+        "title": "7th Ave South of Blanchard St Bicycle Counter",
+        "link": "https://data.seattle.gov/Transportation/7th-Ave-South-of-Blanchard-St-Bicycle-Counter/qfzg-zmyj",
+        "api_docs_link": "https://dev.socrata.com/foundry/data.seattle.gov/qfzg-zmyj",
+        "dataset_id": "qfzg-zmyj",
+        "description": "The counter consist on Inductive loops on the protected north bike lane that count the passing of bicycles in the NW direction. They are very accurate and designed to be used on greenways and cycle tracks. This counter currently doesn't count bikes in the south bike lane.",
+        "identifier": "blanchard",
+        "date_range": {
+            "start": "2019-08-01",
+            "end": "2024-02-29"
+        }
+    },
+    {
+        "title": "Westlake PBL at Newton St Bicycle Counter (Out of Service)",
+        "link": "https://data.seattle.gov/Transportation/Westlake-PBL-at-Newton-St-Bicycle-Counter-Out-of-S/675b-cqew",
+        "api_docs_link": "https://dev.socrata.com/foundry/data.seattle.gov/675b-cqew",
+        "dataset_id": "675b-cqew",
+        "description": "Due to hardware issues, this counter is no longer in service. Counts are conducted using tubes on a quarterly basis.",
+        "identifier": "westlake",
+        "date_range": {
+            "start": "2018-04-13",
+            "end": "2021-10-30"
+        }
+    },
+    {
+        "title": "2nd Ave Cycle Track South of Cedar St Bicycle Counter (Out of Service)",
+        "link": "https://data.seattle.gov/Transportation/2nd-Ave-Cycle-Track-South-of-Cedar-St-Bicycle-Coun/heuk-48p8",
+        "api_docs_link": "https://dev.socrata.com/foundry/data.seattle.gov/heuk-48p8",
+        "dataset_id": "heuk-48p8",
+        "description": "The counters consist of two small tube sensors stretching across the track, which are attached to a small metal counting box made by Eco-Counter. The tubes only count people riding bikes. They are very accurate and designed to be used on greenways and cycle tracks.",
+        "identifier": "second_cedar",
+        "date_range": {
+            "start": "2018-03-01",
+            "end": "2020-03-31"
+        }
+    }
+]
